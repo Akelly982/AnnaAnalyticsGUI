@@ -1,0 +1,149 @@
+:root{
+    --testColor0: #f7f7f7;
+    --testColor1: #e8e8e8;
+    --testColor2: #8d8a8a;
+    --testColor3: #3b3b3b;
+
+    --topBarHeight: 50px;
+    --SideNavBtnHeight: 50px;
+    
+}
+    
+ /* .akActive{
+    color: var(--accentColor) !important;
+} */
+
+
+.akBody{
+    margin: 0;
+}
+
+.akBodySplitter{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.akSideNav{
+    background-color: yellow;
+    width:400px;
+    max-width: 400px;
+}
+
+.akRightContainer{
+    background-color: lightblue;
+    width: 100%;
+}
+
+.akActivePageHeader{
+    height: var(--topBarHeight);
+    background-color: lightslategray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.akRightContainerInner{
+    background-color: whitesmoke;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.akSiteLogo{
+    background-color: peru;
+    width: 100%;
+    height: var(--topBarHeight);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.akFooter{
+    display:flex;
+    background-color: grey;
+    height:200px;
+    width:100%;
+    justify-content:center;
+}
+
+.akFooterContent{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.akSideNavHomeBtn{
+    height: var(--SideNavBtnHeight);
+    width: 100%;
+}
+
+.akSideNavHomeItem{
+    background-color: var(--testColor1);
+    margin: 0px 10px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: var(--SideNavBtnHeight);
+}
+
+.akSideNavItemParent{
+    background-color: var(--testColor1);
+    margin: 20px 10px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: var(--SideNavBtnHeight);
+}
+
+.akNavItemChild{
+    background-color: var(--testColor0);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 40px;
+}
+
+/* select element under the class in this case <p> */
+.akNavItemChild a{  
+    padding-right: 25px;
+}
+
+
+.akParentBtn{
+    width: 100%;
+    height: var(--SideNavBtnHeight);
+}
+
+
+
+
+
+/* Modular classes ----------------------------------
+--------------------------------------------------- */
+
+.akSpacer25{
+    min-height: 25px;
+}
+
+.akSpacer50{
+    min-height: 50px;
+}
+
+.akSpacer75{
+    min-height: 75px;
+}
+
+.akSpacer100{
+    min-height: 100px;
+}
