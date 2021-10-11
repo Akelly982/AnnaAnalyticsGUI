@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
     // inital DOM connections
     var SideNavBtnContainer = document.getElementById("akSideNavDynamicBtns")
 
@@ -12,16 +13,34 @@ $(document).ready(function(){
 
 
 
-    
-
 
 
     // ----- FUN..ctions ----------------------------------------
     // -----------------------------------------------------------
 
 
+    //hidden form used to change page with method type POST per child
+    //---------------------------------------------------------------
+    // function createHiddenForm(childId,parentId){
 
-    function createSideNavChildElement(item){
+    //     // create elements
+    //     let form = document.createElement('form')
+
+    //     // setup form
+    //     form.setAttribute('method', "POST")
+    //     form.setAttribute('action' , "itemInput.php")
+
+    //     form.innerHTML = "<input type='hidden' name='childId' value='" + childId + "'>" +
+    //                     "<input type='hidden' name='parentId' value='" + parentId + "'>";
+            
+    //     return form;
+    // }
+
+
+
+
+
+    function createSideNavChildElement(item,parentId){
         // what we are creating single child element
         //    <div class="akNavItemChild">
         //         <a href="#">I am a nav child </a>
@@ -36,9 +55,47 @@ $(document).ready(function(){
         link.setAttribute('id', item.childId);
         link.innerHTML = item.childName;
 
+        // Code from when I was changing page with data method POST
+        // -----------------------------------------------
+        // create hiddenform for child using function
+        //let hiddenForm = createHiddenForm(item.childId,parentId) 
+        //append hiddenForm to link
+        //link.append(hiddenForm);
+
+        //append all to parent
         parentCont.append(link)
 
-        //TODO Create interaction for each child element
+
+
+        // ---------------------------------------------------------
+        // ------------------------------------ PHASE 2 ------------
+        // WHAT HAPPENS WHEN U CLICK ON AN CHILD ITEM IN THE NAV
+        // ---------------------------------------------------------
+        //----------------------------------------------------------
+        link.addEventListener('click', (event) => {
+            //alert("parentId: " + parentId + " / childId: " + item.childId);    //for testing
+            // hiddenForm.submit();
+
+            $.ajax({
+                url:"http://127.0.0.1:5000/itemInput",
+                method:"POST",
+                data : {parentId: parentId, childId: item.childId},  
+                crossDomain: true,
+                success : function(result){  //my result becomes my JSON // ARRAY
+                    if (result.isSuccessfull){
+                       alert(result.whoAmI)
+                    }else{
+                        alert(result.errorMsg)
+                    }
+                    
+                },    
+                error: function (jqXhr, textStatus, errorMessage) {
+                    alert('Error' + errorMessage + " " + textStatus + " " + jqXhr);
+                }    
+            });
+
+
+        })
 
         return parentCont;
     }
@@ -80,8 +137,8 @@ $(document).ready(function(){
         parentCont.append(parentButton);
 
         //create and append child items
-        item.childData.forEach(item => {
-            let child = createSideNavChildElement(item);
+        item.childData.forEach(childDataItem => {
+            let child = createSideNavChildElement(childDataItem,item.parentId);
             parentCont.append(child);
         });
 
@@ -90,16 +147,13 @@ $(document).ready(function(){
 
 
 
-
         //setup its interactins while we have its data
-        
         parentCont.addEventListener('click', (event) => {
             // alert("ParentId: " + item.parentId);    //for testing
 
             // log who is currently active
             sideNavActive = parent.id;
 
-        
         })
 
     }
@@ -107,22 +161,13 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-
     //on Load -------------------------------------------------------
     //---------------------------------------------------------------
-
     // alert("index js loaded");
 
     // inital load of the nav items
     $.ajax({
-        url:"http://127.0.0.1:5000/activeParentBtn",
+        url:"http://127.0.0.1:5000/navBtn",
         method:"POST",
         // dataType: "json",
         crossDomain: true,
@@ -146,21 +191,23 @@ $(document).ready(function(){
     }); 
 
 
-    
-
-
 
 
     //on clicks --------------------------------------------------------
     //------------------------------------------------------------------
+
+    // Home button will essentially just reload the home page
+    $("#NavHomeBtn").click(function(e){
+        e.preventDefault();
+        //alert("Home btn clicked");
+
+        //standard change location request
+        window.location = "index.php";
+
+    })
+
+
     
-
-    $("#akTestButton").click(function(event){
-        event.preventDefault();   //prevents code from overlapping on run, if Jquery code already running skip
-        alert("test function");
-    }); 
-
-
 
 
 

@@ -1,3 +1,8 @@
+<?php
+    $parentId = $_POST["parentId"];
+    $childId = $_POST["childId"];
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -30,6 +35,10 @@
                     </div>
                     <div class="akRightContainerInner">
                         <div class="akSpacer100"></div>
+
+                        <!-- Testing data transfer -->
+                        <!-- <p> <?php echo $parentId ?> </p> -->
+
                         <h1>Welcome</h1>
                     </div>
                 
@@ -51,8 +60,7 @@
         ?>
     </footer>
 
-    <!-- js scripts -->
+     <!-- Current page JS -->
     <script src="scripts/sideNav.js"> </script>
-    
 
 </html>

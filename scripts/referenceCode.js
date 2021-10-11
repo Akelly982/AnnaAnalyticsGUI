@@ -91,7 +91,7 @@
 
 
 
-
+    // https://api.jquery.com/jQuery.Ajax/
 
     // // Jquery Ajax HTTP call   
     $("#akButton").click(function(event){
