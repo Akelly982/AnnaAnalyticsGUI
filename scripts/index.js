@@ -83,9 +83,11 @@ $(document).ready(function(){
                 crossDomain: true,
                 success : function(result){  //my result becomes my JSON // ARRAY
                     if (result.isSuccessfull){
-                       alert(result.whoAmI)
+                        alert(result.whoAmI)
+                        //print to user the inputForm within the displayContainer
                     }else{
                         alert(result.errorMsg)
+                        // print to user the default input form showing error
                     }
                     
                 },    
@@ -163,9 +165,9 @@ $(document).ready(function(){
 
     //on Load -------------------------------------------------------
     //---------------------------------------------------------------
-    // alert("index js loaded");
+    //alert("sideNav js loaded");
 
-    // inital load of the nav items
+    // inital load of the sideNav items
     $.ajax({
         url:"http://127.0.0.1:5000/navBtn",
         method:"POST",
@@ -205,6 +207,15 @@ $(document).ready(function(){
         window.location = "index.php";
 
     })
+
+    $("#NavTemplatePgBtn").click(function(e){
+        e.preventDefault();
+        //alert("Testing page btn clicked");
+
+        //standard change location request
+        window.location = "templatePage.php";
+    })
+    
 
 
     

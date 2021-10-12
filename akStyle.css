@@ -4,9 +4,8 @@
     --testColor2: #8d8a8a;
     --testColor3: #3b3b3b;
 
-    --topBarHeight: 50px;
     --SideNavBtnHeight: 50px;
-    
+    --GuiRadius: 10px;
 }
     
  /* .akActive{
@@ -15,7 +14,8 @@
 
 
 .akBody{
-    margin: 0;
+    margin: 5%;
+    background-color: lightblue;
 }
 
 .akBodySplitter{
@@ -24,61 +24,80 @@
     justify-content: flex-start;
 }
 
-.akSideNav{
-    background-color: yellow;
-    width:400px;
-    max-width: 400px;
-}
-
-.akRightContainer{
-    background-color: lightblue;
-    width: 100%;
-}
-
-.akActivePageHeader{
-    height: var(--topBarHeight);
-    background-color: lightslategray;
+.akHeader{
+    background-color: var(--testColor3);
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    height: 75px;
+    border-radius: var(--GuiRadius);
 }
 
-.akRightContainerInner{
-    background-color: whitesmoke;
-    margin-left: 5%;
-    margin-right: 5%;
+.akHeader p{
+    color: var(--testColor1);
+}
 
+.akHeaderPageName{
+    /* background-color: yellow; */
+    width: 100%;  
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 .akSiteLogo{
-    background-color: peru;
-    width: 100%;
-    height: var(--topBarHeight);
+    background-color: var(--testColor0);
+    width: 30%;
     display:flex;
     justify-content: center;
     align-items: center;
+    
+    /* logo only on left side radius */
+    border-radius: var(--GuiRadius) 0px 0px var(--GuiRadius);
 }
+
+
+.akSideNav{
+    background-color: var(--testColor1);
+    width:30%;
+    max-width: 400px;
+
+    /* only left side of nav has radius */
+    border-radius: var(--GuiRadius) 0px 0px var(--GuiRadius);
+}
+
+/* Outer is used to maintain a consistent margin */
+.akDisplayContainerOuter{
+    background-color: var(--testColor0);
+    width: 100%;
+    /* only right side of display cont has radius */
+    border-radius: 0px var(--GuiRadius) var(--GuiRadius) 0px;
+}
+
+.akDisplayContainer{
+    background-color: var(--testColor0);
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
 
 .akFooter{
     display:flex;
-    background-color: grey;
-    height:200px;
+    background-color: var(--testColor3);
+    height:50px;
     width:100%;
     justify-content:center;
+    align-items: center;
+    border-radius: var(--GuiRadius);
 }
 
-.akFooterContent{
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    background-color: lightblue;
-    margin-top: 20px;
-    margin-bottom: 40px;
+.akFooter p{
+    color: var(--testColor1)
 }
+
 
 .akSideNavHomeBtn{
     height: var(--SideNavBtnHeight);
@@ -126,11 +145,65 @@
 }
 
 
+.akHomeWelcome{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    background-image: url(content/images/tieDie.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 300px 125px;
+
+    justify-self: center;
+    align-self: center;
+
+    height: 200px;
+}
+
+.akHomeWelcome p{
+    font-size: 30px;
+    color: #e8e8e8;
+    /* For single shadow effect --> horizontal vertical blur color */
+    text-shadow: 2px 2px 2px #3b3b3b;
+    font-weight: 600;
+}
+
+.akTextMarginTopMin5x{
+    margin-top: -5px;
+}
+
+/* Input Items ----------------------------------
+--------------------------------------------------- */
+
+.inputItem1And2{
+    background-color: var(--testColor1);
+    padding: 10px 20px 10px 20px;
+    margin: 5px 0px 5px 0px;
+    display:flex;
+    flex-direction: column;
+    border-radius: 5px;
+
+    min-width: 300px;
+    max-width: 400px;
+    align-self: center;
+}
+
+.inputItemSubmit{
+    
+}
 
 
 
 /* Modular classes ----------------------------------
 --------------------------------------------------- */
+
+/* used within akSpacersX to add text */
+.akCommentSpacer{
+    text-align: center;
+    width: 100%;
+}
 
 .akSpacer25{
     min-height: 25px;
@@ -146,4 +219,16 @@
 
 .akSpacer100{
     min-height: 100px;
+}
+
+.akTextLeft{
+    text-align: start;
+}
+
+.akTextRight{
+    text-align: end;
+}
+
+.akTextCenter{
+    text-align: center;
 }
