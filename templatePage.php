@@ -9,7 +9,11 @@
         ?>
     </head>
 
-    
+    <!-- This normally loads in last on the actural page but here i load it first due to dynamic content -->
+    <!-- Their are inline scripts on the test page which need Jquery to work otherwise i would have to write them in base JS -->
+    <?php 
+        include 'modularContent/endOfBodyScripts.php';
+    ?>
      
 
     <body class="akBody">
@@ -139,79 +143,89 @@
                         <div class="akSpacer100">
                             <p class="akCommentSpacer"> ------------------ Input Item's ----------------</p>
                         </div>
-
-                        <p class="akTextLeft"> 
-                            ----- Number input field ------ <br>
-                            inputItemId: 1 <br>
-                            inputDataFields: [ inputId, inputName, inputHint, labelName] <br>
-                        </p>
                         
-                        <div class="inputItem1And2">
-                            <label for="inputId"> labelName </label>
-                            <input type="number" id="inputId" name="inputName" placeholder="inputHint" required>
-                        </div>
 
+                        <!-- ITEM INPUT 1A ----------------------- -->
+                        <!-- ------------------------------------- -->
 
                         <p class="akTextLeft"> 
-                            ----- Text input field ------ <br>
-                            inputItemId: 2 <br>
-                            inputDataFields: [ inputId, inputName, inputHint, labelName] <br>
+                            ----- input1A  ( simple maths addition) ------ <br>
+                            send: num1 + num2 to output1A
                         </p>
 
-                        <div class="inputItem1And2">
-                            <label for="inputId"> labelName </label>
-                            <input type="text" id="inputId" name="inputName" placeholder="inputHint" required>
+                        <!-- 1A notes end ------------------------ -->
+                        
+                        <div class="inputItem">
+                            <label for="num1"> labelName </label>
+                            <input type="number" id="num1" name="num1" placeholder="value 1" required>
                         </div>
 
-
-                        <!-- ITEM INPUTS Submit Button --------- -->
-                        <!-- ----------------------------------- -->
-                        <div class="akSpacer75"></div>
-                        <div class="akSpacer25">
-                            <p class="akCommentSpacer"> ------------------ Input Item's Submit button ----------------</p>
-                        </div>
-                        <p class="akTextLeft"> 
-                            Input submit button will have to come with a inline script and acknowledge the ID of each above input within the DOM. <br><br>
-                            Foreach Id getElementById <br>
-                            AJAX then needs destination URL <>
-                        </p>
-
-                        <div class="inputItem1And2">
-                            <label for="inputId"> labelName </label>
-                            <input type="text" id="inputId" name="inputName" placeholder="inputHint" required>
+                        <div class="inputItem">
+                            <label for="num2"> labelName </label>
+                            <input type="number" id="num2" name="num2" placeholder="value 2" required>
                         </div>
                         
-                        <button id="someId" class="inputItemSubmit">
-                            <p>Submit<p>
-                        </button>
+                        <button id="inputSubmit" class="inputItemSubmit"> Submit </button>
+
+                        <!-- output for template page only (proper page empty and fill display container) -->
+                        
+                        <div class="akSpacerInputOutput">
+                            <p class="akTextCenter"> -------------------------------------  </p>
+                        </div>
+                        
+                        <div id="output1AContainer">
+                            <!-- fill with returned data  -->
+                            <p class="akTextCenter"> On input data will be displayed here </p>
+                        </div>
 
                         <!-- Button comes with inline js -->
-                        <!-- <script>
-                            // if button sumeId is pressed 
-                            foreach item
-                                // let 0 = document.getElementById("inputId");   
-                                
-                            $.ajax({
-                                url:"http://127.0.0.1:5000/itemInput",
-                                method:"POST",
-                                data : {parentId: parentId, childId: item.childId},  
-                                crossDomain: true,
-                                success : function(result){  //my result becomes my JSON // ARRAY
-                                    if (result.isSuccessfull){
-                                        alert(result.whoAmI)
-                                        //print to user the inputForm within the displayContainer
-                                    }else{
-                                        alert(result.errorMsg)
-                                        
-                                    }
-                                },    
-                                error: function (jqXhr, textStatus, errorMessage) {
-                                    alert('Error' + errorMessage + " " + textStatus + " " + jqXhr);
-                                }    
-                            });   
-                        </script> -->
+                        <script>
 
+                            // jquery has not loaded in by this point
+                            // inputSubmit = document.getElementById("inputItemSubmit")
+
+                            // inputSubmit.addEventListener("click", {
+                            $("#inputSubmit").click(function(e){
+                                e.preventDefault();
+                                //alert("inputSubmit btn hit");
+                                
+                                var output1AContainer = document.getElementById("output1AContainer");
+                                //get inputs
+                                var num1 = document.getElementById("num1").value
+                                var num2 = document.getElementById("num2").value
+                                
+                                console.log("num1: " + num1)
+                                console.log("num2: " + num2)
+
+                                //validate inputs 
+                                
+                                //send data to outputXX
+                                $.ajax({
+                                    url:"http://127.0.0.1:5000/itemOutput",
+                                    method:"POST",
+                                    data : { x:num1 , y: num2},  
+                                    crossDomain: true,
+                                    success : function(result){  //my result becomes my JSON // ARRAY
+                                        console.log('Success 1A Input');
+                                        output1AContainer.innerHTML = " my data ";
+                                    },    
+                                    error: function (jqXhr, textStatus, errorMessage) {
+                                        console.log("Error 1A input");
+                                    }    
+                                });  
+
+                            });
+                        </script>
+
+                        <!-- ITEM INPUT 1A ----------------------- -->
+                        <!-- ------------------------------------- -->
+
+                        
+
+
+                    
                     </div>
+                    <!-- end display container -->
                 
             </div>
         </div>
@@ -228,14 +242,15 @@
         </div>
 
 
-        <?php 
-            include 'modularContent/endOfBodyScripts.php';
-        ?>
+        
 
     </body>
 
-    
+
     <!-- js scripts -->
-    <script src="scripts/templatePage.js"> </scrip>
+    <script src="scripts/templatePage.js"></script>
+
 
 </html>
+
+

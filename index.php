@@ -9,7 +9,7 @@
         ?>
     </head>
 
-    
+
      
 
     <body class="akBody">
@@ -40,7 +40,7 @@
 
             <!-- Right Display Content View  -->
             <div class="akDisplayContainerOuter">
-                    <div class="akDisplayContainer">
+                    <div class="akDisplayContainer" id="displayContainer">
 
                         <div class="akSpacer100"></div>
 
@@ -103,17 +103,17 @@
             <p> <--- Back to top ---> </p>
         </div>
 
-
+           
+        
         <?php 
-            include 'modularContent/endOfBodyScripts.php';
+                include 'modularContent/endOfBodyScripts.php';
         ?>
 
     </body>
 
     
-
     <!-- js scripts -->
-    <script src="scripts/index.js"> </script>
+    <script src="scripts/index.js"></script>
     
 
 </html>

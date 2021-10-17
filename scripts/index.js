@@ -2,9 +2,9 @@ $(document).ready(function(){
 
 
     // inital DOM connections
-    var SideNavBtnContainer = document.getElementById("akSideNavDynamicBtns")
-
-
+    var SideNavBtnContainer = document.getElementById("akSideNavDynamicBtns");
+    var DisplayContainer = document.getElementById('displayContainer');
+    var ActivePageName = document.getElementById('activePageName');
     
     // This will hold our side navigation buttons and children array
     var sideNavDataArray = null;
@@ -17,26 +17,6 @@ $(document).ready(function(){
 
     // ----- FUN..ctions ----------------------------------------
     // -----------------------------------------------------------
-
-
-    //hidden form used to change page with method type POST per child
-    //---------------------------------------------------------------
-    // function createHiddenForm(childId,parentId){
-
-    //     // create elements
-    //     let form = document.createElement('form')
-
-    //     // setup form
-    //     form.setAttribute('method', "POST")
-    //     form.setAttribute('action' , "itemInput.php")
-
-    //     form.innerHTML = "<input type='hidden' name='childId' value='" + childId + "'>" +
-    //                     "<input type='hidden' name='parentId' value='" + parentId + "'>";
-            
-    //     return form;
-    // }
-
-
 
 
 
@@ -72,9 +52,9 @@ $(document).ready(function(){
         // WHAT HAPPENS WHEN U CLICK ON AN CHILD ITEM IN THE NAV
         // ---------------------------------------------------------
         //----------------------------------------------------------
+
         link.addEventListener('click', (event) => {
-            //alert("parentId: " + parentId + " / childId: " + item.childId);    //for testing
-            // hiddenForm.submit();
+            var childTitle = item.childName + " " + item.childId 
 
             $.ajax({
                 url:"http://127.0.0.1:5000/itemInput",
@@ -82,17 +62,24 @@ $(document).ready(function(){
                 data : {parentId: parentId, childId: item.childId},  
                 crossDomain: true,
                 success : function(result){  //my result becomes my JSON // ARRAY
-                    if (result.isSuccessfull){
-                        alert(result.whoAmI)
-                        //print to user the inputForm within the displayContainer
+                    // console.log(result)
+                    // console.log(childTitle)
+                    // DisplayContainer.innerHTML = result;
+                    // ActivePageName.innerHTML = childTitle
+                    if(result.isSuccessfull){
+                        DisplayContainer.innerHTML = result.htmlString
+
+                        myScript = document.createElement('script');
+                        myScript.innerHTML = result.jsScript;
+                        DisplayContainer.append(myScript);
+
                     }else{
-                        alert(result.errorMsg)
-                        // print to user the default input form showing error
+                        DisplayContainer.innerHTML = '<p> error isSuccessfull false </p>'
                     }
                     
                 },    
                 error: function (jqXhr, textStatus, errorMessage) {
-                    alert('Error' + errorMessage + " " + textStatus + " " + jqXhr);
+                    alert("RESTful request error ")
                 }    
             });
 

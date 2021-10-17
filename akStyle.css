@@ -177,7 +177,7 @@
 /* Input Items ----------------------------------
 --------------------------------------------------- */
 
-.inputItem1And2{
+.inputItem{
     background-color: var(--testColor1);
     padding: 10px 20px 10px 20px;
     margin: 5px 0px 5px 0px;
@@ -191,7 +191,11 @@
 }
 
 .inputItemSubmit{
-    
+    margin: 20px 0px 20px 0px;
+    min-width: 200px;
+    max-width: 300px;
+    height: 30px;
+    align-self: center;
 }
 
 
