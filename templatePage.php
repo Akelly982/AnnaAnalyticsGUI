@@ -173,48 +173,59 @@
                             <p class="akTextCenter"> -------------------------------------  </p>
                         </div>
                         
-                        <div id="output1AContainer">
+                        <div id="outputContainer" class=outputCont>
                             <!-- fill with returned data  -->
                             <p class="akTextCenter"> On input data will be displayed here </p>
                         </div>
 
+                        <div class="outputCont">
+                            <div class="outputRow">
+                                <p> Result: </p>
+                                <p class="akTextCenter"> 5 </p>
+                            </div>
+                        </div>
+
+
                         <!-- Button comes with inline js -->
                         <script>
 
-                            // jquery has not loaded in by this point
-                            // inputSubmit = document.getElementById("inputItemSubmit")
-
-                            // inputSubmit.addEventListener("click", {
                             $("#inputSubmit").click(function(e){
                                 e.preventDefault();
                                 //alert("inputSubmit btn hit");
                                 
-                                var output1AContainer = document.getElementById("output1AContainer");
-                                //get inputs
-                                var num1 = document.getElementById("num1").value
-                                var num2 = document.getElementById("num2").value
+                                // find output container
+                                var outputContainer = document.getElementById("outputContainer");
                                 
-                                console.log("num1: " + num1)
-                                console.log("num2: " + num2)
+                                //find inputs 
+                                var num1 = document.getElementById("num1")
+                                var num2 = document.getElementById("num2")
+                                
+                                //data validation
+                                if(num1.value.length == 0 || num2.value.length == 0){
+                                    alert('One or more fields was left empty');
+                                    return
+                                }
 
-                                //validate inputs 
-                                
+                                // let childId = document.getElementById("activeChildId").value;
+                                // console.log("found child id: " + childId.toString())
+
                                 //send data to outputXX
                                 $.ajax({
                                     url:"http://127.0.0.1:5000/itemOutput",
                                     method:"POST",
-                                    data : { x:num1 , y: num2},  
+                                    data : { childId : '1A' , x : num1.value , y : num2.value},  
                                     crossDomain: true,
                                     success : function(result){  //my result becomes my JSON // ARRAY
                                         console.log('Success 1A Input');
-                                        output1AContainer.innerHTML = " my data ";
+                                        outputContainer.innerHTML = " my data ";
+                                        
                                     },    
                                     error: function (jqXhr, textStatus, errorMessage) {
                                         console.log("Error 1A input");
                                     }    
                                 });  
-
                             });
+
                         </script>
 
                         <!-- ITEM INPUT 1A ----------------------- -->

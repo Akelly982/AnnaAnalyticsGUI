@@ -200,6 +200,20 @@
 
 
 
+
+/* Output Items ----------------------------------
+--------------------------------------------------- */
+.outputCont{
+    background-color: var(--testColor1);
+}
+.outputRow{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /* Modular classes ----------------------------------
 --------------------------------------------------- */
 
