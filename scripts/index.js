@@ -25,15 +25,15 @@ $(document).ready(function(){
         // var childIdElement = document.getElementById("activeChildId");
         // let childId = document.getElementById("activeChildId").value;
 
-    function createHiddenChildInput(childId){
-        childIdElement = document.createElement('input');
+    // function createHiddenChildInput(childId){
+    //     childIdElement = document.createElement('input');
 
-        childIdElement.setAttribute('type','hidden')
-        childIdElement.setAttribute('value',childId)
-        childIdElement.setAttribute('id',"activeChildId")
+    //     childIdElement.setAttribute('type','hidden')
+    //     childIdElement.setAttribute('value',childId)
+    //     childIdElement.setAttribute('id',"activeChildId")
 
-        return childIdElement
-    }
+    //     return childIdElement
+    // }
 
 
     function createSideNavChildElement(item,parentId){
@@ -93,8 +93,8 @@ $(document).ready(function(){
                         DisplayContainer.append(myScript);
 
                         //hide child id in the the displayContainer
-                        childIdElement = createHiddenChildInput(item.childId);
-                        DisplayContainer.prepend(childIdElement);
+                        // childIdElement = createHiddenChildInput(item.childId);
+                        // DisplayContainer.prepend(childIdElement);
 
 
                     }else{

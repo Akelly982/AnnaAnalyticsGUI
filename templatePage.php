@@ -156,12 +156,12 @@
                         <!-- 1A notes end ------------------------ -->
                         
                         <div class="inputItem">
-                            <label for="num1"> labelName </label>
+                            <label for="num1"> Number 1 </label>
                             <input type="number" id="num1" name="num1" placeholder="value 1" required>
                         </div>
 
                         <div class="inputItem">
-                            <label for="num2"> labelName </label>
+                            <label for="num2"> Number 2 </label>
                             <input type="number" id="num2" name="num2" placeholder="value 2" required>
                         </div>
                         
@@ -175,14 +175,7 @@
                         
                         <div id="outputContainer" class=outputCont>
                             <!-- fill with returned data  -->
-                            <p class="akTextCenter"> On input data will be displayed here </p>
-                        </div>
-
-                        <div class="outputCont">
-                            <div class="outputRow">
-                                <p> Result: </p>
-                                <p class="akTextCenter"> 5 </p>
-                            </div>
+                            <p class="akTextCenter"> On input data sent results will be displayed here </p>
                         </div>
 
 
@@ -211,13 +204,13 @@
 
                                 //send data to outputXX
                                 $.ajax({
-                                    url:"http://127.0.0.1:5000/itemOutput",
+                                    url:"http://127.0.0.1:5000/itemOutput1A",
                                     method:"POST",
                                     data : { childId : '1A' , x : num1.value , y : num2.value},  
                                     crossDomain: true,
                                     success : function(result){  //my result becomes my JSON // ARRAY
                                         console.log('Success 1A Input');
-                                        outputContainer.innerHTML = " my data ";
+                                        outputContainer.innerHTML = " temp data ";
                                         
                                     },    
                                     error: function (jqXhr, textStatus, errorMessage) {
@@ -227,6 +220,14 @@
                             });
 
                         </script>
+
+                        <!-- template display of output result for 1A -->
+                        <div class="outputCont">
+                            <div class="outputRow">
+                                <p> Result: </p>
+                                <p class="akTextCenter"> 99 </p>
+                            </div>
+                        </div>
 
                         <!-- ITEM INPUT 1A ----------------------- -->
                         <!-- ------------------------------------- -->
