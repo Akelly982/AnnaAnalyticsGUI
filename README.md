@@ -22,18 +22,25 @@ This website only uses JQuery externally.
 Note jQuery here is local './modularContent/JQuery3.6.0.js' I do this to avoid unexpected changes over time.
 
 
----
+<!-- ---
 
-### Copyrights:
+### Copyrights: 
 
+I should write somthing here 
+
+-->
 
 
 ---
 
 ### Moral Rights:
 
-I would like to acknowlege
+I would like to acknowlege external code used within this project
 1. [JQuery](https://jquery.com/)
+
+AIT Teachers/Supervisors:
+1. Kriss Mahatumaratana
+
 
 ---
 
