@@ -97,12 +97,6 @@
 
         <div class="akSpacer25"></div>
 
-
-
-        <div class="akFooter">
-            <p> <--- Back to top ---> </p>
-        </div>
-
            
         
         <?php 

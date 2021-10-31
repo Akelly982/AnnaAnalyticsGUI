@@ -201,7 +201,8 @@ $(document).ready(function(){
             
         },    
         error: function (jqXhr, textStatus, errorMessage) {
-            alert('Error' + errorMessage + " " + textStatus + " " + jqXhr);
+            // alert('Error ' + errorMessage + " " + textStatus + " " + jqXhr);
+            alert('Error 404 for RESTful api');
         }    
     }); 
 
