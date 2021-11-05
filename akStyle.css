@@ -4,6 +4,9 @@
     --testColor2: #8d8a8a;
     --testColor3: #3b3b3b;
 
+    --textColorLight: #e8e8e8;
+    --textColorDark: #3b3b3b;
+
     --SideNavBtnHeight: 50px;
     --GuiRadius: 10px;
 }
@@ -14,7 +17,8 @@
 
 
 .akBody{
-    margin: 5%;
+    /* margin: 0 5% 5% 5%; */
+    margin: 0;
     background-color: lightblue;
 }
 
@@ -22,39 +26,91 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    margin: 0 5% 0 5%;
 }
 
-.akHeader{
-    background-color: var(--testColor3);
+.akHomeWelcome{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    background-image: url(content/images/tieDie.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 300px 125px;
+
+    justify-self: center;
+    align-self: center;
+
+    height: 200px;
+}
+
+.akHomeWelcome p{
+    font-size: 30px;
+    color: #e8e8e8;
+    /* For single shadow effect --> horizontal vertical blur color */
+    text-shadow: 2px 2px 2px #3b3b3b;
+    font-weight: 600;
+}
+
+.akTextMarginTopMin5x{
+    margin-top: -5px;
+}
+
+
+
+/* ---------------------------------------------- */
+/* ------ Top Bar ------------------------------- */
+
+.akTopBar{
+    background-color: var(--testColor1);
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    height: 75px;
-    border-radius: var(--GuiRadius);
+    justify-content: space-between;
+    height: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
-.akHeader p{
-    color: var(--testColor1);
+.akTopBar p{
+    color: var(--textColorDark);
 }
 
-.akHeaderPageName{
-    /* background-color: yellow; */
-    width: 100%;  
+.akTopBar h3{
+    color: var(--textColorDark);
+}
+
+.akTopBarOpacity{
+    background-color: var(--testColor1);
+    height: 20px;
+    opacity: 50%;
+}
+
+
+.akTopBarColonSplitter{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.akTopBarPageName{ 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .akSiteLogo{
-    background-color: var(--testColor0);
-    width: 30%;
     display:flex;
     justify-content: center;
-    align-items: center;
-    
-    /* logo only on left side radius */
-    border-radius: var(--GuiRadius) 0px 0px var(--GuiRadius);
+    align-items: center;  
 }
+
+
+
+
+
+/* ---------------------------------------------- */
+/* ------ Side Nav ------------------------------- */
 
 
 .akSideNav{
@@ -66,40 +122,13 @@
     border-radius: var(--GuiRadius) 0px 0px var(--GuiRadius);
 }
 
-/* Outer is used to maintain a consistent margin */
-.akDisplayContainerOuter{
-    background-color: var(--testColor0);
-    width: 100%;
-    /* only right side of display cont has radius */
-    border-radius: 0px var(--GuiRadius) var(--GuiRadius) 0px;
-}
-
-.akDisplayContainer{
-    background-color: var(--testColor0);
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-
-
-.akFooter{
-    display:flex;
-    background-color: var(--testColor3);
-    height:50px;
-    width:100%;
-    justify-content:center;
-    align-items: center;
-    border-radius: var(--GuiRadius);
-}
-
-.akFooter p{
-    color: var(--testColor1)
-}
-
-
 .akSideNavHomeBtn{
+    height: var(--SideNavBtnHeight);
+    width: 100%;
+}
+
+.akSideNavTemplateBtn{
+    margin-top: 10px;
     height: var(--SideNavBtnHeight);
     width: 100%;
 }
@@ -145,37 +174,29 @@
 }
 
 
-.akHomeWelcome{
-    display:flex;
-    justify-content: center;
-    align-items: center;
+
+/* ---------------------------------------------- */
+/* ---- Display Container ----------------------- */
+
+/* Outer is used to maintain a consistent margin displayContainer*/
+.akDisplayContainerOuter{
+    /* Using bkg to  */
+    background-color: rgba(20, 20, 20, 0.2);
     width: 100%;
-
-    background-image: url(content/images/tieDie.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 300px 125px;
-
-    justify-self: center;
-    align-self: center;
-
-    height: 200px;
+    /* only right side of display cont has radius */
+    border-radius: 0px var(--GuiRadius) var(--GuiRadius) 0px;
 }
 
-.akHomeWelcome p{
-    font-size: 30px;
-    color: #e8e8e8;
-    /* For single shadow effect --> horizontal vertical blur color */
-    text-shadow: 2px 2px 2px #3b3b3b;
-    font-weight: 600;
+.akDisplayContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
 }
 
-.akTextMarginTopMin5x{
-    margin-top: -5px;
-}
 
-/* Input Items ----------------------------------
---------------------------------------------------- */
+
+/*----------- ---------------------------------- */
+/* --- Input items ----------------------------- */
 
 .inputItem{
     background-color: var(--testColor1);
@@ -203,8 +224,9 @@
 
 /* Output Items ----------------------------------
 --------------------------------------------------- */
+
 .outputCont{
-    background-color: var(--testColor1);
+    background-color: var(--testColor2);
 }
 .outputRow{
     display:flex;
@@ -212,6 +234,8 @@
     align-items: center;
     justify-content: center;
 }
+
+
 
 
 /* Modular classes ----------------------------------

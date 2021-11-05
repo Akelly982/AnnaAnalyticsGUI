@@ -1,17 +1,25 @@
+
+<?php
+    $showTemplatePage = true;
+?>
+
+
 <!doctype html>
 <html lang='en'>
 
     <!-- Constants items     -----  ------   -->
+
     <div class="akSpacer25"></div>
     <div class="akSideNavHomeItem ">
+        
         <button class="akSideNavHomeBtn" id="NavHomeBtn">
             <p> Home </p>
         </button>
         
         <!-- TODO -- Hard Coded function set to false when not testing with site or better remove -->
         <?php 
-            if(TRUE){
-                echo "<button class='akSideNavHomeBtn' id='NavTemplatePgBtn'>
+            if($showTemplatePage){
+                echo "<button class='akSideNavTemplateBtn' id='NavTemplatePgBtn'>
                         <p> AkTemplate</p>
                     </button> ";
             }

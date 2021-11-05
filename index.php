@@ -10,22 +10,21 @@
     </head>
 
 
-     
-
     <body class="akBody">
-
-
-        <div class="akHeader">   
-            <div class="akSiteLogo">
-                <h3> Anna analytics </h3>
-            </div>
-            <div class="akHeaderPageName">
-                <p id="activePageName"> Home </p>
-            </div>
+        
+        <div class="akTopBar">   
+                <div class="akSiteLogo">
+                    <h3> Anna analytics </h3>
+                </div>
+                <div class="akTopBarPageName">
+                    <p id="activePageName"> Home </p>
+                    <p class="akTopBarColonSplitter">:</p>
+                    <p id="activeUser">Username</p>
+                </div>
         </div>
+        <div class="akTopBarOpacity"></div>
 
         <div class="akSpacer25"></div>
-
 
 
         <!-- Start for Data Body Splitter -->
