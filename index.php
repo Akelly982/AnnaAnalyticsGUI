@@ -41,49 +41,52 @@
             <div class="akDisplayContainerOuter">
                     <div class="akDisplayContainer" id="displayContainer">
 
-                        <div class="akSpacer100"></div>
+                        <div class="akSpacer25"></div>
 
-
-                        <div class="akHomeWelcome">
-                            <p> Welcome </p>
+                        <div class="akBackBoard">
+                            <div class="akHomeWelcome">
+                                <p> Welcome </p>
+                            </div>
                         </div>
+
+                        <div class="akSpacer25"></div>
                         
-
-                        <h3 class="akTextLeft"> The Moto </h3>
-                        <p class="akTextCenter akTextMarginTopMin5"> 
-                            "Using Historical data to predict make predictions about future outcomes.."
-                        </p>
-
+                        <div class="akBackBoard">
+                            <h3 class="akTextLeft"> The Moto </h3>
+                            <p class="akTextCenter akTextMarginTopMin5"> 
+                                "Using Historical data to predict make predictions about future outcomes.."
+                            </p>
+                        </div>
 
                         <div class="akSpacer25"></div>
 
+                        <div class="akBackBoard">
+                            <h3 class="akTextCenter"> Brief </h3>
+                            <p class="akTextCenter  akTextMarginTopMin5"> Here I have created a graphical user interface(GUI) to be emebeded in the clients learning managment system (LMS). It will use external AI in connection to data sourced from the LMS to predict future probabilities and other analytics. This AI based data will be accessed through an RESTFul api.
+                            </p>
+                        </div>
 
-                        <h3 class="akTextCenter"> Brief </h3>
-                        <p class="akTextCenter  akTextMarginTopMin5"> Here I have created a graphical user interface(GUI) to be emebeded in the clients learning managment system (LMS). It will use external AI in connection to data sourced from the LMS to predict future probabilities and other analytics. This AI based data will be accessed through an RESTFul api.
-                        </p>
+                        <div class="akBackBoard">
+                            <h3 class="akTextRight"> Project Origin </h3>
+                            <p class="akTextCenter akTextMarginTopMin5"> 
+                                This project was put forth by AIT as a final year student project to be run within the Advance studio classes. 
+                                
+                                <br> This overall is two symesters covering a total of 6 months. The first symester focuses on documention, planning, and presenting the concept. After this the second symester begins which is full a full software development lifecycle (SDLC) which ever you may choose. 
+                            </p>
+                        </div>
 
-
-                        <h3 class="akTextRight"> Project Origin </h3>
-                        <p class="akTextCenter akTextMarginTopMin5"> 
-                            This project was put forth by AIT as a final year student project to be run within the Advance studio classes. 
+                        <div class="akBackBoard">
+                            <h3 class="akTextLeft"> Our Goal </h3>
+                            <p class="akTextLeft akTextMarginTopMin5"> 
+                                1) Take something that is seemingly confusing and make it readable. <br><br>
                             
-                            <br> This overall is two symesters covering a total of 6 months. The first symester focuses on documention, planning, and presenting the concept. After this the second symester begins which is full a full software development lifecycle (SDLC) which ever you may choose. 
-                        </p>
-                    
+                                2) Create a Functional Good looking GUI for AIT our client. <br><br>
 
+                                3) Lower the barrier to entry for the end user, we are not all programmers or mathematicians. <br><br>
 
-                        <h3 class="akTextLeft"> Our Goal </h3>
-                        <p class="akTextLeft akTextMarginTopMin5"> 
-                            1) Take something that is seemingly confusing and make it readable. <br><br>
-                        
-                            2) Create a Functional Good looking GUI for AIT our client. <br><br>
-
-                            3) Lower the barrier to entry for the end user, we are not all programmers or mathematicians. <br><br>
-
-                            4) It must display the resulting analytical informationeffectively and efficiently for the end user to analyse. <br><br>
-                        </p>
-
-
+                                4) It must display the resulting analytical informationeffectively and efficiently for the end user to analyse. <br><br>
+                            </p>
+                        </div>
 
                         <div class="akSpacer100"></div>
 

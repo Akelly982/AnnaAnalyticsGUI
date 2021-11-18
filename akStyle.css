@@ -7,19 +7,30 @@
     --textColorLight: #e8e8e8;
     --textColorDark: #3b3b3b;
 
+    /* ------------------------ */
+
+
+    --mainHighlight: #023aff;
+    --MainLight: #25245d;
+            /* used for btns header etc */
+    --Main: #1a1a3c;    
+            /* used everywhere for panels */
+            /* main for RGBA  */
+    --SuperDark: #0f0f24;
+    --transparentDisplayBkg:  rgba(23, 23, 23, .44);
+            /* #171717  with opacity 44%  */
+    --textLight: #fff;
+
     --SideNavBtnHeight: 50px;
     --GuiRadius: 10px;
+
 }
-    
- /* .akActive{
-    color: var(--accentColor) !important;
-} */
 
 
 .akBody{
     /* margin: 0 5% 5% 5%; */
     margin: 0;
-    background-color: lightblue;
+    background-color: var(--SuperDark);
 }
 
 .akBodySplitter{
@@ -35,10 +46,10 @@
     align-items: center;
     width: 100%;
 
-    background-image: url(content/images/tieDie.png);
+    /* background-image: url(content/images/tieDie.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 300px 125px;
+    background-size: 300px 125px; */
 
     justify-self: center;
     align-self: center;
@@ -48,7 +59,7 @@
 
 .akHomeWelcome p{
     font-size: 30px;
-    color: #e8e8e8;
+    color: var(--textLight);
     /* For single shadow effect --> horizontal vertical blur color */
     text-shadow: 2px 2px 2px #3b3b3b;
     font-weight: 600;
@@ -64,7 +75,7 @@
 /* ------ Top Bar ------------------------------- */
 
 .akTopBar{
-    background-color: var(--testColor1);
+    background-color: var(--MainLight);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -74,15 +85,15 @@
 }
 
 .akTopBar p{
-    color: var(--textColorDark);
+    color: var(--textLight);
 }
 
 .akTopBar h3{
-    color: var(--textColorDark);
+    color: var(--textLight);
 }
 
 .akTopBarOpacity{
-    background-color: var(--testColor1);
+    background-color: var(--MainLight);
     height: 20px;
     opacity: 50%;
 }
@@ -113,8 +124,63 @@
 /* ------ Side Nav ------------------------------- */
 
 
+
+
+/* dropdown testing */
+/* w3schools.com/howto/howto_css_dropdown.asp */
+
+/* determins the position of the drop down */
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+/* drop down btn color */
+.dropBtn{
+    color: var(--textLight);
+    background-color: var(--MainLight);
+    height: var(--SideNavBtnHeight);
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* .dropBtn :hover{
+    background-color: var(--MainLight);
+} */
+
+/* dropdown content by default it is hidden */
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: var(--Main);
+
+    min-width: 160px;
+    box-shadow:  0px 8px 16px 0px rgba(0, 0, 0, .3);
+    z-index: 1;
+}
+
+/* drop down links */
+.dropdown-content a{
+    color: var(--textLight);
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+}
+
+/* show drop down menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* change dropdown btn color on hover */
+.dropdown:hover .dropBtn{
+    background-color: var(--mainHighlight);
+}
+
+/* ---------------- */
 .akSideNav{
-    background-color: var(--testColor1);
+    background-color: var(--Main);
     width:30%;
     max-width: 400px;
 
@@ -123,18 +189,37 @@
 }
 
 .akSideNavHomeBtn{
+    color: var(--textLight);
+    background-color: var(--MainLight);
     height: var(--SideNavBtnHeight);
     width: 100%;
+    border: none;
+    border-radius: 50px;
+}
+
+.akParentBtn{
+    width: 100%;
+    height: var(--SideNavBtnHeight);
+
+    color: var(--textLight);
+    background-color: var(--MainLight);
+    border: none;
+    border-radius: 50px;
 }
 
 .akSideNavTemplateBtn{
-    margin-top: 10px;
+    color: var(--textLight);
+    background-color: var(--MainLight);
     height: var(--SideNavBtnHeight);
     width: 100%;
+    border: none;
+    border-radius: 50px;
+    margin-top: 10px;
 }
 
-.akSideNavHomeItem{
-    background-color: var(--testColor1);
+
+
+.akSideNavConstItem{
     margin: 0px 10px 0px 10px;
     display: flex;
     flex-direction: column;
@@ -144,7 +229,6 @@
 }
 
 .akSideNavItemParent{
-    background-color: var(--testColor1);
     margin: 20px 10px 20px 10px;
     display: flex;
     flex-direction: column;
@@ -154,7 +238,7 @@
 }
 
 .akNavItemChild{
-    background-color: var(--testColor0);
+    background-color: var(--MainLight);
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -164,13 +248,9 @@
 
 /* select element under the class in this case <p> */
 .akNavItemChild a{  
+    color: var(--textLight);
     padding-right: 25px;
-}
-
-
-.akParentBtn{
-    width: 100%;
-    height: var(--SideNavBtnHeight);
+    text-decoration: none;
 }
 
 
@@ -178,10 +258,13 @@
 /* ---------------------------------------------- */
 /* ---- Display Container ----------------------- */
 
-/* Outer is used to maintain a consistent margin displayContainer*/
+
+
+/* The transperent panel effect */
+/* also used to maintain a consistent boder */
 .akDisplayContainerOuter{
     /* Using bkg to  */
-    background-color: rgba(20, 20, 20, 0.2);
+    background-color: var(--transparentDisplayBkg);
     width: 100%;
     /* only right side of display cont has radius */
     border-radius: 0px var(--GuiRadius) var(--GuiRadius) 0px;
@@ -193,13 +276,22 @@
     margin: 5%;
 }
 
+/*sits in display container and is the div shown with proper bkg */
+.akBackBoard{
+    background-color:   var(--Main);
+    border-radius: var(--GuiRadius);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--textLight);
+}
 
 
 /*----------- ---------------------------------- */
 /* --- Input items ----------------------------- */
 
 .inputItem{
-    background-color: var(--testColor1);
+    background-color: var(--Main);
     padding: 10px 20px 10px 20px;
     margin: 5px 0px 5px 0px;
     display:flex;
@@ -226,7 +318,7 @@
 --------------------------------------------------- */
 
 .outputCont{
-    background-color: var(--testColor2);
+    background-color: var(--Main);
 }
 .outputRow{
     display:flex;

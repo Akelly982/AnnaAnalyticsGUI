@@ -74,56 +74,35 @@ $(document).ready(function(){
 
 
             // over RESTful API
-            // $.ajax({
-            //     url:"http://127.0.0.1:5000/itemInput",
-            //     method:"POST",
-            //     data : {parentId: parentId, childId: item.childId},  
-            //     crossDomain: true,
-            //     success : function(result){  //my result becomes my JSON // ARRAY
-
-            //         // set Active page to child name and id   <-- we know this regardless of result
-            //         ActivePageName.innerHTML = childTitle
-
-            //         if(result.isSuccessfull){
-
-            //             //set result html to display container
-            //             DisplayContainer.innerHTML = result.htmlString
-
-            //             //scripts are created seperatly otherwise they dont connect properly to the DOM
-            //             myScript = document.createElement('script');
-            //             myScript.innerHTML = result.jsScript;
-            //             DisplayContainer.append(myScript);
-
-            //             //hide child id in the the displayContainer
-            //             // childIdElement = createHiddenChildInput(item.childId);
-            //             // DisplayContainer.prepend(childIdElement);
-
-
-            //         }else{
-            //              // "POST" Data missing on request:
-            //             alert("itemInput isSuccessfull returned false")
-            //         }
-                    
-            //     },    
-            //     error: function (jqXhr, textStatus, errorMessage) {
-            //         // connection failed is the WSGI for your python code launched ?
-            //         alert("RESTful request error ")
-            //     }    
-            // });
-
-
-            // local item input
             $.ajax({
-                url:"docs/itemInput.php",
+                url:"http://127.0.0.1:5000/itemInput",
                 method:"POST",
-                data : {childId: item.childId},  
-                crossDomain: false,
+                data : {parentId: parentId, childId: item.childId},  
+                crossDomain: true,
                 success : function(result){  //my result becomes my JSON // ARRAY
 
                     // set Active page to child name and id   <-- we know this regardless of result
                     ActivePageName.innerHTML = childTitle
 
-                    DisplayContainer.innerHTML = result
+                    if(result.isSuccessfull){
+
+                        //set result html to display container
+                        DisplayContainer.innerHTML = result.htmlString
+
+                        //scripts are created seperatly otherwise they dont connect properly to the DOM
+                        myScript = document.createElement('script');
+                        myScript.innerHTML = result.jsScript;
+                        DisplayContainer.append(myScript);
+
+                        //hide child id in the the displayContainer
+                        // childIdElement = createHiddenChildInput(item.childId);
+                        // DisplayContainer.prepend(childIdElement);
+
+
+                    }else{
+                         // "POST" Data missing on request:
+                        alert("itemInput isSuccessfull returned false")
+                    }
                     
                 },    
                 error: function (jqXhr, textStatus, errorMessage) {
@@ -131,6 +110,27 @@ $(document).ready(function(){
                     alert("RESTful request error ")
                 }    
             });
+
+
+            // local item input
+            // $.ajax({
+            //     url:"docs/itemInput.php",
+            //     method:"POST",
+            //     data : {childId: item.childId},  
+            //     crossDomain: false,
+            //     success : function(result){  //my result becomes my JSON // ARRAY
+
+            //         // set Active page to child name and id   <-- we know this regardless of result
+            //         ActivePageName.innerHTML = childTitle
+
+            //         DisplayContainer.innerHTML = result
+                    
+            //     },    
+            //     error: function (jqXhr, textStatus, errorMessage) {
+            //         // connection failed is the WSGI for your python code launched ?
+            //         alert("RESTful request error ")
+            //     }    
+            // });
 
 
         })
@@ -230,7 +230,7 @@ $(document).ready(function(){
     }); 
 
 
-
+    
 
     //on clicks --------------------------------------------------------
     //------------------------------------------------------------------
