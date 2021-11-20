@@ -236,7 +236,7 @@ $(document).ready(function(){
     //------------------------------------------------------------------
 
     // Home button will essentially just reload the home page
-    $("#NnvHomeBtn").click(function(e){
+    $("#navHomeBtn").click(function(e){
         e.preventDefault();
         //alert("Home btn clicked");
 

@@ -10,8 +10,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
 
-    <!-- AK Styles  -->
-    <link rel="styleSheet" href="akStyle.css">
 
 
     <!-- Bootstrap css -->

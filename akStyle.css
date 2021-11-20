@@ -8,7 +8,8 @@
     --textColorDark: #3b3b3b;
 
     /* ------------------------ */
-
+    --highlightGreen: #ffc700;
+    --highlightRed:   #ec223b;
 
     --mainHighlight: #023aff;
     --MainLight: #25245d;
@@ -26,11 +27,18 @@
 
 }
 
+p{
+    font-size: 18px;
+}
 
 .akBody{
-    /* margin: 0 5% 5% 5%; */
     margin: 0;
     background-color: var(--SuperDark);
+
+    background-image: url(./content/images/Lightning_20perSpacing1.png);
+    background-repeat: space;
+    background-size:70px;
+    padding: 5px,
 }
 
 .akBodySplitter{
@@ -40,25 +48,8 @@
     margin: 0 5% 0 5%;
 }
 
+
 .akHomeWelcome{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
-    /* background-image: url(content/images/tieDie.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 300px 125px; */
-
-    justify-self: center;
-    align-self: center;
-
-    height: 200px;
-}
-
-.akHomeWelcome p{
-    font-size: 30px;
     color: var(--textLight);
     /* For single shadow effect --> horizontal vertical blur color */
     text-shadow: 2px 2px 2px #3b3b3b;
@@ -69,6 +60,16 @@
     margin-top: -5px;
 }
 
+.akHomeHeroHalf{
+    border-radius: var(--GuiRadius);
+    background-color: lightcoral;
+    height: 256px;
+
+    background-image: url(./content/images/AnnaHeroHalf.png);
+    background-size: cover;
+
+
+}
 
 
 /* ---------------------------------------------- */
@@ -133,6 +134,7 @@
 .dropdown{
     position: relative;
     display: inline-block;
+    width: 100%;
 }
 
 /* drop down btn color */
@@ -142,7 +144,9 @@
     height: var(--SideNavBtnHeight);
     width: 100%;
     border: none;
-    border-radius: 10px;
+    border-radius: var(--GuiRadius);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* .dropBtn :hover{
@@ -153,7 +157,7 @@
 .dropdown-content{
     display: none;
     position: absolute;
-    background-color: var(--Main);
+    background-color: var(--MainLight);
 
     min-width: 160px;
     box-shadow:  0px 8px 16px 0px rgba(0, 0, 0, .3);
@@ -168,17 +172,29 @@
     display: block;
 }
 
-/* show drop down menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
 /* change dropdown btn color on hover */
 .dropdown:hover .dropBtn{
     background-color: var(--mainHighlight);
 }
 
+/* show drop down menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* drop down link color change on hover */
+.dropdown-content a:hover{
+    background-color: var(--mainHighlight);
+}
+
+.navActive{
+    background-color: var(--mainHighlight);
+}
+
 /* ---------------- */
+/* ---------------- */
+
 .akSideNav{
     background-color: var(--Main);
     width:30%;
@@ -268,6 +284,8 @@
     width: 100%;
     /* only right side of display cont has radius */
     border-radius: 0px var(--GuiRadius) var(--GuiRadius) 0px;
+
+    min-height: 500px;
 }
 
 .akDisplayContainer{
@@ -278,12 +296,15 @@
 
 /*sits in display container and is the div shown with proper bkg */
 .akBackBoard{
-    background-color:   var(--Main);
+    background-color: var(--Main);
     border-radius: var(--GuiRadius);
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     color: var(--textLight);
+
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -316,9 +337,14 @@
 
 /* Output Items ----------------------------------
 --------------------------------------------------- */
+.akSpacerOutput{
+    color: var(--textLight);
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
 
 .outputCont{
-    background-color: var(--Main);
+    color: var(--textLight);
 }
 .outputRow{
     display:flex;
@@ -333,10 +359,37 @@
 /* Modular classes ----------------------------------
 --------------------------------------------------- */
 
-/* used within akSpacersX to add text */
+.akTextGreen{
+    color: var(--highlightGreen)
+}
+
+.akTextRed{
+    color: var(--highlightRed)
+}
+
+.akTextLeft{
+    margin-left: 25px;
+    text-align: start;
+}
+
+.akTextRight{
+    margin-right: 25px;
+    text-align: end;
+}
+
+.akTextCenter{
+    text-align: center;
+}
+
 .akCommentSpacer{
     text-align: center;
     width: 100%;
+}
+
+
+/* used within akSpacersX to add text */
+.akSpacer10{
+    min-height: 10px;
 }
 
 .akSpacer25{
@@ -355,14 +408,4 @@
     min-height: 100px;
 }
 
-.akTextLeft{
-    text-align: start;
-}
 
-.akTextRight{
-    text-align: end;
-}
-
-.akTextCenter{
-    text-align: center;
-}
