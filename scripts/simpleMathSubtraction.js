@@ -33,8 +33,6 @@ $(document).ready(function(){
             success : function(result){  //my result becomes my JSON // ARRAY
                 if(result.isSuccessfull){
                     outputContainer.innerHTML = result.htmlString;
-                }else{
-
                 }
                 
             },    

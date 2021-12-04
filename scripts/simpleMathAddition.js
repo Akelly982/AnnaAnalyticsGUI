@@ -6,6 +6,7 @@ $(document).ready(function(){
     activePageItem.setAttribute("class","dropBtn navActive");
 
 
+
     //find inputs 
     var num1 = document.getElementById("num1")
     var num2 = document.getElementById("num2")
@@ -35,8 +36,6 @@ $(document).ready(function(){
             success : function(result){  //my result becomes my JSON // ARRAY
                 if(result.isSuccessfull){
                     outputContainer.innerHTML = result.htmlString;
-                }else{
-
                 }
                 
             },    

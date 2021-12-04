@@ -49,7 +49,7 @@
                     <!-- display container start -->
                     <!-- ======================= -->
 
-                     <!-- Input Form -->
+                    <!-- Input Form -->
                     <div class="akBackBoard">
                         <h2 class="akTextLeft akTextGreen">Input</h2>
                         <div class="inputItem">
@@ -66,7 +66,7 @@
                     <div id="outputContainer" class="outputCont">
                         <!-- fill with returned data  -->
                         <div class="akBackBoard">
-                            <h2 class="akTextLeft akTextRed">Input</h2>
+                            <h2 class="akTextLeft akTextRed">Output</h2>
                             <p class="akTextCenter"> On input submit output data will be displayed here </p>
                         </div>
                     </div>

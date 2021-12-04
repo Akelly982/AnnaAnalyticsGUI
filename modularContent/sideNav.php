@@ -43,9 +43,10 @@
         </div>
 
         <div class="dropdown">
-            <button class="dropBtn" id="navUdon"> 饂飩 Udon noodles</button>
+            <button class="dropBtn" id="navUdon"> APM assignment prediction model </button>
             <div class="dropdown-content">
-                <a href="assignmentPredictMach1.php" >Persistent AI student Result</a>
+                <a href="APM_Mach1.php" >APM Mach_1 Ak_DataSet</a>
+                <a href="APM_Mach2.php" >APM Mach_2 AIT_DataSet</a>
                 
             </div>
         </div>

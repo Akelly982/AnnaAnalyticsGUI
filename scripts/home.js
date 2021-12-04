@@ -4,10 +4,13 @@ $(document).ready(function(){
 
     //set page as active page
     var activePageItem = document.getElementById('navHomeBtn')
-    // both bellow work
+
+    // both javascript bellow work
         // (1) attribute = it's self + itemX
     // activePageItem.setAttribute("class", activePageItem.getAttribute("class") + " navActive");
         // (2) rewrite the item as a whole 
+
+    // used (2) from above
     activePageItem.setAttribute("class","dropBtn navActive");
 
 

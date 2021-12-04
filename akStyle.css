@@ -356,8 +356,45 @@ p{
 
 
 
+
+
+
+
 /* Modular classes ----------------------------------
 --------------------------------------------------- */
+.akMaxWidth100{
+    max-width: 100px;
+}
+
+.akMaxWidth200{
+    max-width: 200px;
+}
+
+.akMaxWidth250{
+    max-width: 250px;
+}
+
+.akMaxWidth300{
+    max-width: 300px;
+}
+.rowSpaceEvenly{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.rowSpaceEvenlyAlignTop{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+
+.akResultPaddingLeft{
+    padding-left: 5px;
+}
 
 .akTextGreen{
     color: var(--highlightGreen)
