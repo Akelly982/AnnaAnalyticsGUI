@@ -62,11 +62,12 @@ p{
 
 .akHomeHeroHalf{
     border-radius: var(--GuiRadius);
-    background-color: lightcoral;
+    background-color: #3b3b3b;
     height: 256px;
 
-    background-image: url(./content/images/AnnaHeroHalf.png);
+    background-image: url(./content/images/AnnaHeroHalf5.png);
     background-size: cover;
+    background-repeat: no-repeat;
 
 
 }
@@ -325,11 +326,19 @@ p{
 }
 
 .inputItemSubmit{
+    color: var(--textLight);
+    background-color: var(--MainLight);
+    border-radius: var(--GuiRadius);
+    border-style: none;
     margin: 20px 0px 20px 0px;
     min-width: 200px;
     max-width: 300px;
-    height: 30px;
+    height: 40px;
     align-self: center;
+}
+
+.inputItemSubmit:hover{
+    background-color: var(--mainHighlight);
 }
 
 

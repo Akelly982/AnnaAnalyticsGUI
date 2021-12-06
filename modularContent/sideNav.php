@@ -33,12 +33,12 @@
         <div class="akSpacer25"></div>
 
         <div class="dropdown">
-            <button class="dropBtn" id="navSimpleMath"> simple math </button>
+            <button class="dropBtn" id="navSimpleMath"> Simple math </button>
             <div class="dropdown-content">
                 <!-- <a href="./pages/simpleMath/addition.php">addition</a> -->
-                <a href="simpleMath_Addition.php">addition</a>
-                <a href="simpleMath_Subtraction.php">subtraction</a>
-                <a href="simpleMath_Multiplication.php">multiply</a>
+                <a href="simpleMath_Addition.php">Addition</a>
+                <a href="simpleMath_Subtraction.php">Subtraction</a>
+                <a href="simpleMath_Multiplication.php">Multiply</a>
             </div>
         </div>
 
